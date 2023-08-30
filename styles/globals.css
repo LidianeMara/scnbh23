@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./markdown.css";
+
+@font-face {
+  font-family: "Epilogue";
+  src:
+    url("/Epilogue/Epilogue-Bold.woff2") format("woff2"),
+    url("/Epilogue/Epilogue-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src:
+    url("/Epilogue/Epilogue-Light.woff2") format("woff2"),
+    url("/Epilogue/Epilogue-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src:
+    url("/Epilogue/Epilogue-ExtraLight.woff2") format("woff2"),
+    url("/Epilogue/Epilogue-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src:
+    url("/Epilogue/Epilogue-Medium.woff2") format("woff2"),
+    url("/Epilogue/Epilogue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src:
+    url("/Epilogue/Epilogue-Regular.woff2") format("woff2"),
+    url("/Epilogue/Epilogue-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src:
+    url("/Epilogue/Epilogue-SemiBold.woff2") format("woff2"),
+    url("/Epilogue/Epilogue-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src:
+    url("/Epilogue/Epilogue-Thin.woff2") format("woff2"),
+    url("/Epilogue/Epilogue-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Epilogue";
+  src:
+    url("/Epilogue/Epilogue-Italic.woff2") format("woff2"),
+    url("/Epilogue/Epilogue-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --clr-white: #fffdf0;
+  --clr-black: #18191a;
+  --clr-blue-dark: #0a0957;
+  --clr-blue-light: #00ccfc;
+  --clr-blue-default: #0095ec;
+  --clr-blue-lightest: #50ddfe;
+  --clr-blue-darkest: #001c42;
+  --clr-green-dark: #00392e;
+  --clr-green-light: #6aa924;
+  --clr-yellow-dark: #f29f05;
+  --clr-yellow-light: #f2cb05;
+}
+* {
+  /* font-family: "Open Sans"; */
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--clr-black);
+  background-color: var(--clr-white);
+}
+
+h2 {
+  font-family: "Epilogue";
+  font-size: large;
+  font-weight: 700;
+  color: var(--clr-white);
+}
+
+.header-links {
+  font-family: "Epilogue";
+  font-size: small;
+  color: var(--clr-blue-dark);
+}
+
+.gradient-circle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+  top: -30px;
+  height: 40px;
+  width: 100vw;
+  opacity: 0.5;
+  filter: blur(40px);
+  background: radial-gradient(
+    circle,
+    rgba(248, 107, 223, 1) 0%,
+    rgba(107, 107, 248, 0.8) 100%
+  );
+}
+.gradient-circle-bottom {
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+  bottom: -20px;
+  height: 30px;
+  width: 100vw;
+  opacity: 0.5;
+  filter: blur(40px);
+  background: radial-gradient(
+    circle,
+    rgba(248, 107, 223, 1) 0%,
+    rgba(107, 107, 248, 0.8) 100%
+  );
+}
+
+.gradient-shadow:hover::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #45caff 0%, #ff1b6b 100%);
+  transform: translate3d(0px, 20px, 0) scale(0.95);
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.gradient-shadow:hover::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
